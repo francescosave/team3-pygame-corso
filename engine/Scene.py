@@ -1,17 +1,20 @@
+from pygame import rect
+
 class Scene:
 
   def __init__(self):
     self.actors =  []
+    self.windowRect = rect.Rect(0,0,0,0)
     
-  
   def load(self):
-    pass
+    for a in self.actors:
+      a.load()
 
   def update(self):
-    pass
+    for a in self.actors:
+      a.update()
 
-  def render(self):
-    print('text')
-
-
+  def render(self, surface):
+    for a in self.actors:
+      a.render(surface)
   

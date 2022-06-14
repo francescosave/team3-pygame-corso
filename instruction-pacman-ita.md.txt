@@ -1,0 +1,39 @@
+https://en.wikipedia.org/wiki/Pac-Man
+https://it.wikipedia.org/wiki/Pac-Man
+
+
+LOGICA BASE Gameplay
+
+Pacman è un videogioco arcade ideato da Tōru Iwatani e prodotto dalla Namco
+nel 1980.
+Lo scopo del gioco e guidare il personaggio Pacman (una creatura sferica gialla)
+all'interno di un labirinto chiuso.
+Nel labirinto sono disseminati sul percorso delle palline
+che pacman mangia passandoci sopra e aquisendo punteggio.
+All'interno del labirinto si sono anche 4 fantasmini (nemici che rincorrono 
+pacman)che nel percorrere il labirinto deve evitare di farsi raggiungere e toccare
+pena la perdita di una delle vite a disposizione.
+I quattro fantasmini possiedono una propia intelligenza e sono 
+Blinky rosso
+Pinky viola
+Inky azzurro
+Clyde arancione
+
+
+
+
+
+
+
+Una ulteriore feature che facilita lo scopo di pacman è la presenza di 4 
+power pills agli angoli del labirinto che se raggiunti da pacman rendono per 10
+secondi i 4 fantasmini vulnerabili e che se toccati fanno aquisire uteriore 
+punti.Durante questa fase i fantasmini tornano nelle parte centrale del labirinto
+
+Un ulteriore feturs è avere un labirinto con due tunnel laterali che permettono di
+spostarsi da una parte all'altra del labirinto e far perdere velocità ai fantasmini
+
+
+
+
+

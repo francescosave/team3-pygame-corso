@@ -1,8 +1,8 @@
 class Component:
 
-  def __init__(self):
-    pass
-
+  def __init__(self, actor=None):
+    self.owner = actor
+    self.name = ""
 
   def load(self):
     pass
@@ -10,5 +10,8 @@ class Component:
   def update(self):
     pass
 
-  def render(self):
+  def render(self, surface):
     pass
+
+  def setOwner(self, actor):
+    self.owner = actor

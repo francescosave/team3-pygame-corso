@@ -2,12 +2,22 @@ class Actor:
 
   def __init__(self):
     self.components = []
+    self.x = 0
+    self.y = 0  
+    self.name = ""
 
   def load(self):
-    pass
+    for a in self.components:
+      a.load()
   
   def update(self):
-    pass
+    for a in self.components:
+      a.update()
 
-  def render(self):
-    print('faccio qualcosa')
+  def render(self, surface):
+    for a in self.components:
+      a.render(surface)
+
+  def addComponent(self, component):
+    self.components.append(component)
+    component.setOwner(self)
