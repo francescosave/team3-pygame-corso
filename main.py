@@ -1,32 +1,41 @@
-import pygame,sys
-from pygame.locals import *
-from engine.Scene import *
-from engine.Actor import *
-from engine.Component import *
+import pygame,sys, pygame.locals
+from engine.scene import *
+from engine.actor import *
+from engine.component import *
+from engine.bouncingmovementcomponent import *
+from engine.staticspritecomponent import *
+from engine.scenefactory import *
+
 
 pygame.init()
 
-scene = Scene()
-scene.render()
-
 Quit = False
 
-
-height = 500
-width = 1200
-window = pygame.display.set_mode((height,width))
+scene = SceneFactory.loadSceneFromFile("example.json")
+window = pygame.display.set_mode((scene.windowRect.width, scene.windowRect.height),0,32)
+pygame.display.set_caption("I cavalieri dell'apocalisse")
+scene.load()
 
 def process_event():
   global Quit
   for event in pygame.event.get():
-    if event.type == QUIT:
+    if event.type == pygame.locals.QUIT:
       Quit=True
   
 def game_logic_update():
-  pass
-
+  global scene 
+  scene.update()
+  return
+  
 def render():
-  pass  
+  global scene
+
+  BLACK = (0, 0, 0)
+  WHITE = (255, 255, 255)
+
+  window.fill(BLACK)
+  scene.render(window)
+  pygame.display.update()
 
 
 #game Loop
@@ -38,5 +47,3 @@ while not Quit:
 
 pygame.quit()
 sys.exit()
-
-
