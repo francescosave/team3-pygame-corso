@@ -1,40 +1,40 @@
 {
     "window": {
-        "width": 1400,
-        "height": 1000
+        "width": 500,
+        "height": 700
     },
     "actors": [
         {
-            "name": "Qui",
-            "x": 150,
-            "y": 200,
+            "name": "Blinky",
+            "x": 0,
+            "y": 0,
             "components": [
                 {
-                    "name": "sprite1",
+                    "name": "sprite",
                     "type": "StaticSpriteComponent",
                     "fileName": "assets/ghost1.png"
                 },
                 {
-                    "name": "bounce1",
+                    "name": "bouncing",
                     "type": "BouncingMovementComponent",
-                    "vx": 0.1,
+                    "vx": 0.05,
                     "vy": 0.05,
                     "boundingRect": {
-                        "x": 0,
-                        "y": 0,
-                        "width": 500,
+                        "x": 100,
+                        "y": 100,
+                        "width": 400,
                         "height": 500
                     }
                 }
             ]
         },
         {
-            "name": "Quo",
+            "name": "Clyde_vulnerable",
             "x": 0,
             "y": 0,
             "components": [
                 {
-                    "name": "sprite2",
+                    "name": "sprite",
                     "type": "StaticSpriteComponent",
                     "fileName": "assets/ghost2.png"
                 },
@@ -48,12 +48,12 @@
             ]
         },
         {
-            "name": "Qua",
-            "x": 500,
-            "y": 500,
+            "name": "Inky_vulnerable",
+            "x": 0,
+            "y": 0,
             "components": [
                 {
-                    "name": "sprite3",
+                    "name": "sprite",
                     "type": "StaticSpriteComponent",
                     "fileName": "assets/ghost3.png"
                 },
@@ -61,8 +61,8 @@
                     "name": "sinusoidal1",
                     "type": "SinusoidalMovementComponent",
                     "amp": 100,
-                    "vx": 0.1,
-                    "angle" : 250
+                    "vx": 0.01,
+                    "angle": 250
                 }
             ]
         }

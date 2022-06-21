@@ -1,4 +1,5 @@
 from .component import *
+from .boundingrect import *
 
 class BouncingMovementComponent(Component):
   def __init__(self, boundingRect, actor=None):
@@ -21,3 +22,8 @@ class BouncingMovementComponent(Component):
     # bounce on the y axis
     if self.owner.y < 0 or self.owner.y > self.boundingRect.height:
         self.vy = -self.vy
+
+  def getDisctionary(self):
+    boundingrect = BoundingRect(self.boundingRect)
+    dictionary = {"name": self.name,"type" : "BouncingMovementComponent" , "vx": self.vx, "vy": self.vy, "boundingRect": boundingrect.getDisctionary()    }
+    return dictionary

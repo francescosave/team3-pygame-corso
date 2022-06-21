@@ -15,3 +15,8 @@ class StaticSpriteComponent(Component):
         rect.centerx = self.owner.x
         rect.centery = self.owner.y
         surface.blit(self.image, rect)
+
+    def getDisctionary(self):
+        dictionary = {"name": self.name,"type" : self.__class__.__name__, "fileName": self.assetFileName}
+        return dictionary
+    

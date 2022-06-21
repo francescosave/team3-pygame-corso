@@ -25,6 +25,9 @@ class SinusoidalMovementComponent(Component):
         #bounce
         if self.owner.x < 0 or self.owner.x > 600:
             self.vx = -self.vx
-        
+
+    def getDisctionary(self):
+      dictionary = {"name": self.name,"type" : self.__class__.__name__ , "amp": self.amp, "vx": self.vx, "angle" : self.angle}
+      return dictionary
 
 

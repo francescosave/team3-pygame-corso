@@ -17,4 +17,14 @@ class Scene:
   def render(self, surface):
     for a in self.actors:
       a.render(surface)
+
+  def getDisctionary(self):
+        list_actors = []
+        for item in self.actors:
+          list_actors.append(item.getDisctionary())
+
+        dictionary = {"window" : {"width" : self.windowRect.width ,"height" :  self.windowRect.height} ,"actors": list_actors}
+        return dictionary
+
+
   

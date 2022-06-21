@@ -21,3 +21,12 @@ class Actor:
   def addComponent(self, component):
     self.components.append(component)
     component.setOwner(self)
+
+  def getDisctionary(self):
+    list_components = []
+    for item in self.components:
+      list_components.append(item.getDisctionary())
+
+    dictionary = {"name": self.name,"x": self.x, "y": self.y, "components": list_components}
+    return dictionary
+    

@@ -45,9 +45,9 @@ class SceneFactory:
               component = SinusoidalMovementComponent()
               component.amp = componentDescriptor["amp"]
               component.vx = componentDescriptor["vx"]
+              component.angle = componentDescriptor["angle"]
             else:
               raise Exception(f"Wrong component type: {componentDescriptor['type']}")
-        
             actor.addComponent(component)
 
           scene.actors.append(actor)
@@ -59,27 +59,13 @@ class SceneFactory:
           print(str(e))
 
   
-  def saveSceneToFile(scene, fileName):
-        with open(fileName, "w") as fileName:            
-            scene_dict = dict()
-            scene_dict["window"] = {"width":scene.windowRect.width, "height":scene.windowRect.height}
-            scene_dict["actors"] = []
-            for act in scene.actors:
-                comp_list = []
-                for comp in act.components:
-                    if isinstance(comp,StaticSpriteComponent):
-                        comp_list.append({"name":comp.name,"type":"StaticSpriteComponent","fileName":comp.assetFileName})
-                    elif isinstance(comp,BouncingMovementComponent):
-                        boundingRect_dict = {"x":comp.boundingRect.x, "y":comp.boundingRect.y,
-                                            "width":comp.boundingRect.width,"height":comp.boundingRect.height}
-                        comp_list.append({"name":comp.name,"type":"BouncingMovementComponent","vx":comp.vx, "vy":comp.vy, "boundingRect":boundingRect_dict})
-                    elif isinstance(comp,CircleMovementComponent):
-                        comp_list.append({"name":comp.name,"type":"CircleMovementComponent",
-                                         "center_x":comp.center_x, "center_y":comp.center_y, "radius":comp.radius})
-                    elif isinstance(comp, SinusoidalMovementComponent):
-                        comp_list.append({"name":comp.name,"type":"SinusoidalMovementComponent","amp":comp.amp, "vx":comp.vx})
-                    else:
-                        raise Exception(f"Wrong component: {comp.name}")
-                scene_dict["actors"].append({"name":act.name, "x":act.x, "y": act.y, "components":comp_list})
-        
-            json.dump(scene_dict, fileName, indent=4)
+
+
+  def saveSceneFromFileJson(self,scene,fileName):
+
+    with open(fileName, "w") as file:
+      try:
+        json.dump(scene.getDisctionary(), file, indent = 4)
+      except Exception as e:
+        print(f"Error on filename: {fileName}")
+        print(str(e))

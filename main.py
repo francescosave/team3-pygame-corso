@@ -5,7 +5,11 @@ from engine.component import *
 from engine.bouncingmovementcomponent import *
 from engine.staticspritecomponent import *
 from engine.scenefactory import *
+from save_scene import *
 
+
+s = SaveScene()
+s.Save()
 
 pygame.init()
 
