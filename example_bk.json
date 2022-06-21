@@ -1,0 +1,69 @@
+{
+    "window": {
+        "width": 1400,
+        "height": 1000
+    },
+    "actors": [
+        {
+            "name": "Qui",
+            "x": 150,
+            "y": 200,
+            "components": [
+                {
+                    "name": "sprite1",
+                    "type": "StaticSpriteComponent",
+                    "fileName": "assets/ghost1.png"
+                },
+                {
+                    "name": "bounce1",
+                    "type": "BouncingMovementComponent",
+                    "vx": 0.1,
+                    "vy": 0.05,
+                    "boundingRect": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 500,
+                        "height": 500
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Quo",
+            "x": 0,
+            "y": 0,
+            "components": [
+                {
+                    "name": "sprite2",
+                    "type": "StaticSpriteComponent",
+                    "fileName": "assets/ghost2.png"
+                },
+                {
+                    "name": "circle1",
+                    "type": "CircleMovementComponent",
+                    "center_x": 500,
+                    "center_y": 300,
+                    "radius": 250
+                }
+            ]
+        },
+        {
+            "name": "Qua",
+            "x": 500,
+            "y": 500,
+            "components": [
+                {
+                    "name": "sprite3",
+                    "type": "StaticSpriteComponent",
+                    "fileName": "assets/ghost2.png"
+                },
+                {
+                    "name": "sinusoidal1",
+                    "type": "SinusoidalMovementComponent",
+                    "amp": 100,
+                    "vx": 0.1
+                }
+            ]
+        }
+    ]
+}

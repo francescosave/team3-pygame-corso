@@ -11,7 +11,7 @@ pygame.init()
 
 Quit = False
 
-scene = SceneFactory.loadSceneFromFile("example.json")
+scene = SceneFactory.loadSceneFromFile("example_bk.json")
 window = pygame.display.set_mode((scene.windowRect.width, scene.windowRect.height),0,32)
 pygame.display.set_caption("I cavalieri dell'apocalisse")
 scene.load()
@@ -47,3 +47,6 @@ while not Quit:
 
 pygame.quit()
 sys.exit()
+
+
+
